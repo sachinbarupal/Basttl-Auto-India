@@ -2038,13 +2038,11 @@ function getSimilarVariants(){
     let cSeats = CarSeats[CarSeats.selectedIndex].innerText;
     let cTransmission = CarTransmissions[CarTransmissions.selectedIndex].innerText;
     
-    const filtered_exculding_budget = myarr.filter((variant) => (variant["Car Brand"] == cBrand && variant["Body Type"] == bType && variant["Fuel Type"] == fType && variant["Car Seats"] == cSeats && variant["Car Transmissions"] == cTransmission))
-
     let bdgtRange = budget[budget.selectedIndex].innerText;
     let minBdgt = parseInt(bdgtRange.substring(0,2));
     let maxBdgt = parseInt(bdgtRange.substring(3,5));
 
-    const filtered = filtered_exculding_budget.filter((variant) => {
+    const filtered_accToBdgt = myarr.filter((variant) => {
         let priceRange = variant["Price Range Lakh (INR)"];
         
         let minPrice = Math.floor(parseFloat(priceRange.substring(0,4)));
@@ -2056,10 +2054,13 @@ function getSimilarVariants(){
         
         return false;
     });
+
+    let filtered = filtered_accToBdgt.filter((variant) => (variant["Car Brand"] == cBrand && variant["Body Type"] == bType && variant["Fuel Type"] == fType && variant["Car Seats"] == cSeats && variant["Car Transmissions"] == cTransmission))
+    
     
     if(filtered.length == 0){
-        alert('No cars Found');
-        return;
+        alert("No cars Found this Input Showing according to budget");
+        filtered = filtered_accToBdgt;
     }
     console.log(filtered);
 
@@ -2079,10 +2080,6 @@ function getSimilarVariants(){
     for(let i = 0; i<Math.min(3, filtered.length); i++){
         ShowCars(filtered[i], carContainerDiv);
     }
-
-    // filtered.forEach((variant) => {
-    //     ShowCars(variant, carContainerDiv);
-    // });
 
     document.body.appendChild(carContainerDiv);
     carContainerDiv.classList.add('car-container');
