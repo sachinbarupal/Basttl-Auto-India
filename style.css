@@ -8,22 +8,26 @@
     display: flex;
 }
 
-.nav{
+.name{
+    margin: 30px;
+}
 
+.nav{
+    display: flex;
+    justify-content: space-between;
     background-color: white;
     width: 100vw;
     height: 70px;
-    display: flex;
-    justify-content: space-between;
     box-shadow: 10px 9px 24px -8px rgba(0,0,0,0.54);
-    
 }
+
 .logo{
     height: 100px;
     width: auto;
     background-color: aliceblue;
     border-radius: 0px 0px 70px 0px;
 }
+
 .logo img{
     height: 90px;
     width: 250px;
@@ -37,6 +41,7 @@
     align-items: baseline;
     padding: 0px 5px;
 }
+
 .navbarui a{
     padding: 18px;
     margin: 0px 23px;
@@ -47,7 +52,7 @@
 }
 
 .content {
-    height: 625px;
+    height: 100vh;
     width: 100vw;
     background: url("Home.png");
     background-size: cover;
@@ -59,18 +64,21 @@
     align-content: center;
     justify-items: center;
     width: 40%;
-    height: 100%;
-    
+    height: 100%;    
 }
 
-.img1 {
-    height: auto;
-}
+    /* .img1{
+        height: auto;
+    }
+
+    */
+    
 .img2{
     height:350px;
     width: 350px;
+    object-fit: cover;
     border-radius: 50%;
-}
+} 
 .upcoming{
     margin: 0px 0px 0px 0px;
     height: 50px;
@@ -84,6 +92,7 @@
     box-shadow: 10px 9px 24px -8px rgba(0,0,0,0.54);
     margin-top: 10px;
 }
+
 .section2{
     display: grid;
     align-content: center;
@@ -91,6 +100,7 @@
     height: 100%;
     width: 60%;
 }
+
 .format{
     display: block;
     text-align: center;
@@ -98,12 +108,13 @@
     width: 550px;
     background-color: white;
     border-radius: 80px;
-    box-shadow: 0px 8px 70px -8px rgba(0, 0, 0, 0.54);
-
+    box-shadow: 12px 12px 20px rgba(0, 0, 0, 0.54);
 }
+
 #ready{
     font-size: 40px;
 }
+
 #dream{
     font-size: 40px;
     font-weight: 800;
@@ -119,45 +130,56 @@
     grid-template-rows: 80px 80px 80px;
     margin-left:30px;
     margin-top:30px;
-  }
-  .paramain{
+}
+
+.paramain{
     display: flex;
     margin-left:34%;
     margin-bottom: 10px;
     margin-top: 20px;
+}
 
-  }
- .mainbtn1{
+.mainbtn1{
     margin-left:39%;
     margin-top:36px;
     background-color: black; 
     color: white;
+    cursor: pointer;
     width:140px;
     height:40px;
-  }
-  select { 
-    border:1px solid rgba(0,0,0,.2);
- }
- .mainbtn1{
+}
+
+select{ 
+    font-size: 15px;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.mainbtn1{
     background-color: black; 
+    text-align: center;
     color: white;
-    width:120px;
-    height:40px;
+    width:180px;
+    height:50px;
+    margin: 10px auto;
+    margin-top: 20px;
     border-radius: 30px ;
     padding:2px;
     font-weight: bold;
     font-size: large;
- }
- .choosemain{
-    height: 35px;
+}
+
+.choosemain{
+    height: 50px;
     width: 170px;
     border: none;
-    box-shadow: 21px 11px 31px -7px rgba(0,0,0,0.57);
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.25);
     border-radius: 30px;
     text-align: center;
- }
+}
 
- .formatt{
+.formatt{
     display: none; 
     text-align: center;
     height: 500px;
@@ -179,8 +201,8 @@
     p{
         font-size: 30px;
     }
-
 }
+
 .car-container{
     position: absolute;
     top: 30%;
@@ -194,6 +216,7 @@
 .section1.result-active{
     display: none;
 }
+
 .section2.result-active{
     display: none;
 }
