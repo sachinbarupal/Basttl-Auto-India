@@ -12,23 +12,28 @@
 </head>
 
 <body>
-    <div class="header">
-        <div class="navbar">
-            <div class="nav">
+
+    <!-- navbar starts here  -->
+    <header>
+        <div class="container">
+            <nav>
                 <div class="logo">
-                    <img src="besstlelogo.png" alt="">
+                    <a href="#"><img src="besstlelogo.png" alt=""></a>
                 </div>
-                <ul id="nav-bar" class="navbarui">
-                        <li><a href="" >Home</a></li>
-                        <li><a href="">Blogs</a></li>
-                        <li><a href="">Links</a></li>
-                        <li><a href="">Contact</a></li>
-                    <a href=""><i class="fa-solid fa-bars"></i></a>
+                <ul id="sidemenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Blogs</a></li>
+                    <li><a href="#">Links</a></li>
+                    <li><a href="#">Contact</a></li>
+
+                    <i class="fa-solid fa-xmark" id="x" onclick="closemenu()"></i>
                 </ul>
-            </div>
+                <i class="fa-solid fa-bars" id="ham" onclick="openmenu()"></i>
+            </nav>
         </div>
-        <!-- end navbar here -->
-    </div>
+    </header>
+
+    <!-- end navbar here -->
 
     <!-- main content starts here -->
     <div class="content">
@@ -44,19 +49,18 @@
         <div id="section2" class="section2">
             <div class="format">
                 <div class="name">
-                    <p id="ready">Ready to Find your</p>
-                    <p id="dream">Dream Budget Car!!</p>
+                    <p id="ready">Ready to find your <br> <b>dream budget car!!</b></p>
                 </div>
 
                 <div class="wrapper">
                     <div class="formm">
-                            <select id="Car-Brand" class="choosemain">
-                                <option>Car Brand</option>
-                                <option value="Maruti Suzuki" id="Maruti">Maruti Suzuki</option>
-                                <option value="">Tata </option>
-                                <option value="">Mahindra</option>
-                                <option value="">Hyundai</option>
-                            </select>
+                        <select id="Car-Brand" class="choosemain">
+                            <option>Car Brand</option>
+                            <option value="Maruti Suzuki" id="Maruti">Maruti Suzuki</option>
+                            <option value="">Tata </option>
+                            <option value="">Mahindra</option>
+                            <option value="">Hyundai</option>
+                        </select>
                     </div>
                     <div class="formm">
                         <select id="Budget" class="choosemain">
@@ -118,25 +122,85 @@
                 </div>
 
                 <!-- button -->
-                <div  class="mainbtn" style="display: flex; ">
+                <div class="mainbtn">
                     <button id="submitBtn" class="mainbtn1">Next</button>
                 </div>
             </div>
         </div>
 
-        <!-- <div class="car-container">
-            <!-- <div class="car-variant"> -->
-                <!-- <p class="Car-Brand-Name"></p>
+        <div class="car-container">
+            <div class="car-variant">
+                <p class="Car-Brand-Name"></p>
                 <p class="Car-Price-Range"></p>
                 <p class="Car-Body-Type"></p>
                 <p class="Car-Fuel-Type"></p>
                 <p class="Car-Car-Seats"></p>
-                <p class="Car-Car-Transmission"></p> -->
-            <!-- </div> 
-        </div> -->
+                <p class="Car-Car-Transmission"></p>
+            </div>
+        </div>
 
     </div>
+
+
+    <!-- ==================== footer ====================-->
+    <footer>
+        <div class="footer">
+            <div class="detail">
+                <img src="besstlelogo.png" alt="">
+                <!-- <p>Bastll Auto India</p> -->
+                <div class="social">
+                    <a href="https://instagram.com/basttlautoindia?igshid=YmMyMTA2M2Y="><i
+                            class="fa-brands fa-instagram" id="ins"></i></a>
+                    <a href="https://www.linkedin.com/company/sec2hand-business-solutions-private-limited/"><i
+                            class="fa-brands fa-linkedin" id="lin"></i></a>
+                    <a href="https://youtube.com/@Basttlsquad"><i class="fa-brands fa-youtube" id="you"></i></a>
+                    <a href="https://twitter.com/BASTTLAutoIndia?t=J6TKGPh43JqsgdJB1IOHcw&amp;s=08" class="twitter"><i
+                            class="fa-brands fa-twitter" id="twi"></i></a>
+                    <a href="https://instagram.com/basttlautoindia?igshid=YmMyMTA2M2Y=" class="instagram"><i
+                            class="fa-brands fa-facebook" id="fac"></i></a>
+                </div>
+            </div>
+            <div class="links">
+                <h2>Navigation</h2>
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i>Home</a></li>
+                    <li><a href="#"><i class="fa-solid fa-chevron-right"></i>Blog</a></li>
+                    <li><a href="#"><i class="fa-solid fa-chevron-right"></i>Links</a></li>
+                    <li><a href="#"><i class="fa-solid fa-chevron-right"></i>Contact</a></li>
+                </ul>
+            </div>
+            <div class="contact">
+                <h2>Contact Us</h2>
+                <p><i class="fa-sharp fa-solid fa-phone"></i>+91-0000000</p>
+                <p><i class="fa-sharp fa-solid fa-paper-plane"></i><a
+                        href="mailto:contact@ingenioustechkey.com">contact@bastllautoindia</a></p>
+                <p><i class="fa-sharp fa-solid fa-location-dot"></i>iStart Nest, near Polytechnic college, Ratanada,
+                    Jodhpur, Rajasthan</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright © 2023 BASTLL AUTO INDIA, All rights reserved.</p>
+            <div class="up"><a href="#"><i class="fa-solid fa-chevron-up"></i></a></div>
+        </div>
+    </footer>
+
+
+
+
     <script src="index.js"></script>
+
+
+    <!-- sidemenu for small screens -->
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu() {
+            sidemenu.style.right = "0";
+        }
+        function closemenu() {
+            sidemenu.style.right = "-200px";
+        }
+    </script>
 </body>
 
 
